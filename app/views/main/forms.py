@@ -8,14 +8,14 @@ import re
 class Registration_Form(FlaskForm):
     """Form di registrazione"""
 
-    firstName        = StringField('Nome', validators=[DataRequired()])
-    lastName         = StringField('Cognome', validators=[DataRequired()])
-    email            = EmailField('Email', validators=[DataRequired(), Email()])
-    dob              = DateField('Data di nascita', validators=[DataRequired()])
-    password         = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
+    firstName = StringField('Nome', validators=[DataRequired()])
+    lastName = StringField('Cognome', validators=[DataRequired()])
+    email = EmailField('Email', validators=[DataRequired(), Email()])
+    dob = DateField('Data di nascita', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
     confirm_password = PasswordField('Conferma password', validators=[DataRequired(), EqualTo('password')])
-    category         = SelectField('Categoria', choices=['Studente', 'Professore'])
-    submit           = SubmitField('Registrati')
+    category = SelectField('Categoria', choices=['Studente', 'Professore'])
+    submit = SubmitField('Registrati')
 
     # Validazione personalizzata della email
     def validate_email(self, email):
@@ -36,6 +36,6 @@ class Registration_Form(FlaskForm):
 class Login_Form(FlaskForm):
     """Form di login"""
 
-    email   = StringField('Email', validators=[DataRequired(), Email()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit   = SubmitField('Accedi')
+    submit = SubmitField('Accedi')
