@@ -22,5 +22,5 @@ class NewLesson_Form(FlaskForm):
     mode = SelectField('Modalità', choices=['Presenza','Online','Duale'])
     description = TextAreaField('Descrizione')
     date = DateField('Data')
-    time  = SelectField('Orario', coerce = int, choices=[(0,'08:45'), (1,'10:30'), (2,'12:15'), (3,"14:00"), (4,"15:45"), (5,"17:30")])
+    time = SelectField('Orario', coerce = int, choices=[(0,'08:45'), (1,'10:30'), (2,'12:15'), (3,"14:00"), (4,"15:45"), (5,"17:30")])
     submit = SubmitField('Conferma')
